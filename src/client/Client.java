@@ -26,23 +26,25 @@ public class Client {
         //Easter Bunny visits the good kid and the bad kid
         System.out.println("\n" + easterBunny.getName() + " visits " + goodKid.getName() + "!");
 
-        boolean getsPresent = easterBunny.visit(goodKid);
-        if (getsPresent) System.out.println(goodKid.getName() + " gets a present: " + goodKid.getPresentDescription() + ".");
+        goodKid.accept(easterBunny);
+        badKid.accept(easterBunny);
+
+        if (goodKid.hasPresent()) System.out.println(goodKid.getName() + " gets a present: " + goodKid.getPresentDescription() + ".");
         else System.out.println(goodKid.getName() + " doesn't get a present. Instead, " + goodKid.getName() + " gets " + goodKid.getPresentDescription() + ".");
 
-        getsPresent = easterBunny.visit(badKid);
-        if (getsPresent) System.out.println(badKid.getName() + " gets a present: " + badKid.getPresentDescription() + ".");
+        if (badKid.hasPresent()) System.out.println(badKid.getName() + " gets a present: " + badKid.getPresentDescription() + ".");
         else System.out.println(badKid.getName() + " doesn't get a present. Instead, " + badKid.getName() + " gets " + badKid.getPresentDescription() + ".");
 
         //Santa Claus visits the good kid and the bad kid
         System.out.println("\n" + santaClaus.getName() + " visits " + goodKid.getName() + "!");
 
-        getsPresent = santaClaus.visit(goodKid);
-        if (getsPresent) System.out.println(goodKid.getName() + " gets a present: " + goodKid.getPresentDescription() + ".");
+        goodKid.accept(santaClaus);
+        badKid.accept(santaClaus);
+
+        if (goodKid.hasPresent()) System.out.println(goodKid.getName() + " gets a present: " + goodKid.getPresentDescription() + ".");
         else System.out.println(goodKid.getName() + " doesn't get a present. Instead, " + goodKid.getName() + " gets " + goodKid.getPresentDescription() + ".");
 
-        getsPresent = santaClaus.visit(badKid);
-        if (getsPresent) System.out.println(badKid.getName() + " gets a present: " + badKid.getPresentDescription() + ".");
+        if (badKid.hasPresent()) System.out.println(badKid.getName() + " gets a present: " + badKid.getPresentDescription() + ".");
         else System.out.println(badKid.getName() + " doesn't get a present. Instead, " + badKid.getName() + " gets " + badKid.getPresentDescription() + ".");
 
         System.out.println("\n-------------\n");
